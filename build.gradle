@@ -3,7 +3,7 @@ plugins {
 	id 'application'
 }
 
-version = '0.1.1'
+version = '0.1.0'
 
 mainClassName = 'MainKt'
 description = 'My Application'
