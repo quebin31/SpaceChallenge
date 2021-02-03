@@ -6,7 +6,7 @@ plugins {
 version = '0.1.0'
 
 mainClassName = 'MainKt'
-description = 'My Application'
+description = 'Space Challenge'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
