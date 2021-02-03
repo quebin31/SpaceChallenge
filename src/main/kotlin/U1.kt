@@ -3,6 +3,7 @@ package org.quebin31.spacechallenge
 import kotlin.random.Random
 
 class U1 : Rocket() {
+    override val cost = 100 // millions US$
     override val cargoLimit: Int = 8 * 1000 // kg
 
     override fun launch(): Boolean {
