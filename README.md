@@ -1,13 +1,13 @@
-# Kotlin Quick Start
-An empty Kotlin project using Gradle.
+# Space Challenge
+Simulation of rockets with cargos.
 
-You can [use this template](https://github.com/fwcd/kotlin-quick-start/generate) as a starting point for your own project.
 
 ## Building
-`./gradlew build`
+```
+./gradlew build
+```
 
 ## Running
-`./gradlew run`
-
-## Testing
-`./gradlew test`
+```
+./gradlew run --args="files/phase-1.txt files/phase-2.txt" 
+```
