@@ -2,7 +2,7 @@ package org.quebin31.spacechallenge
 
 import java.io.File
 
-class Simulation {
+object Simulation {
     fun loadItems(fileName: String): ArrayList<Item> {
         val lines = File(fileName).readLines()
         val items =
@@ -31,7 +31,7 @@ class Simulation {
             }
         }
 
-        return ArrayList(rockets)        
+        return ArrayList(rockets)
     }
 
     fun loadU1(items: Iterable<Item>): ArrayList<U1> {
@@ -42,11 +42,11 @@ class Simulation {
         return loadRockets(items) { U2() }
     }
 
-    fun runSimulation(rockets: Iterable<Rocket>): Int {
-        var neededBudget = 0 
+    fun <R : Rocket> runSimulation(rockets: Iterable<R>): Int {
+        var neededBudget = 0
 
         for (rocket in rockets) {
-            var failed = true 
+            var failed = true
 
             while (failed) {
                 neededBudget += rocket.cost
