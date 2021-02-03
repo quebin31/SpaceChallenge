@@ -10,8 +10,8 @@ class Simulation {
                     val fields = it.split("=")
                     try {
                         Item(name = fields[0], weight = fields[1].toInt())
-                    } catch { 
-                        null 
+                    } catch (e: Exception) {
+                        null
                     }
                 }
 
