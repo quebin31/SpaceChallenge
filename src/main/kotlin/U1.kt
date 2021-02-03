@@ -10,13 +10,13 @@ class U1 : Rocket() {
         val chanceOfExplosion = 0.05 * (cargoCarried / cargoLimit)
         val random = Random.nextDouble()
 
-        return random < chanceOfExplosion
+        return !(random < chanceOfExplosion)
     }
 
     override fun land(): Boolean {
         val chanceOfCrash = 0.01 * (cargoCarried / cargoLimit)
         val random = Random.nextDouble()
 
-        return random < chanceOfCrash
+        return !(random < chanceOfCrash)
     }
 }
