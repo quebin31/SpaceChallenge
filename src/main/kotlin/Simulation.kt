@@ -41,4 +41,19 @@ class Simulation {
     fun loadU2(items: Iterable<Item>): ArrayList<U2> {
         return loadRockets(items) { U2() }
     }
+
+    fun runSimulation(rockets: Iterable<Rocket>): Int {
+        var neededBudget = 0 
+
+        for (rocket in rockets) {
+            var failed = true 
+
+            while (failed) {
+                neededBudget += rocket.cost
+                failed = !rocket.launch() || !rocket.land()
+            }
+        }
+
+        return neededBudget
+    }
 }
