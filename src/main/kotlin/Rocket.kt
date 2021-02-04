@@ -13,7 +13,6 @@ abstract class Rocket : SpaceShip {
 
     override fun carry(item: Item) {
         if (!canCarry(item)) return
-
         cargoCarried += item.weight
     }
 }
