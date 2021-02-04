@@ -3,6 +3,7 @@ package org.quebin31.spacechallenge
 import java.io.File
 
 object Simulation {
+    /** Load items from the given [fileName] */
     fun loadItems(fileName: String): ArrayList<Item> {
         val lines = File(fileName).readLines()
         val items =
@@ -18,6 +19,7 @@ object Simulation {
         return ArrayList(items)
     }
 
+    /** Load rockets and fill them with the given [items], generic version */
     private fun <R : Rocket> loadRockets(items: Iterable<Item>, factory: () -> R): ArrayList<R> {
         val rockets = arrayListOf<R>()
         var currentRocket = factory()
@@ -34,14 +36,17 @@ object Simulation {
         return ArrayList(rockets)
     }
 
+    /** Load U1 rockets with the given [items] */
     fun loadU1(items: Iterable<Item>): ArrayList<U1> {
         return loadRockets(items) { U1() }
     }
 
+    /** Load U2 rockets with the given [items] */
     fun loadU2(items: Iterable<Item>): ArrayList<U2> {
         return loadRockets(items) { U2() }
     }
 
+    /** Run the simulation with the given [rockets] and return the needed budget to launch them */
     fun <R : Rocket> runSimulation(rockets: Iterable<R>): Int {
         var neededBudget = 0
 
