@@ -37,10 +37,10 @@ object Simulation {
     }
 
     /** Load U1 rockets with the given [items] */
-    fun loadU1(items: Iterable<Item>): ArrayList<U1> = loadRockets(items) { U1() }
+    fun loadU1(items: Iterable<Item>): ArrayList<U1> = loadRockets(items, ::U1)
 
     /** Load U2 rockets with the given [items] */
-    fun loadU2(items: Iterable<Item>): ArrayList<U2> = loadRockets(items) { U2() }
+    fun loadU2(items: Iterable<Item>): ArrayList<U2> = loadRockets(items, ::U2)
 
     /** Run the simulation with the given [rockets] and return the needed budget to launch them */
     fun <R : Rocket> runSimulation(rockets: Iterable<R>): Int {
