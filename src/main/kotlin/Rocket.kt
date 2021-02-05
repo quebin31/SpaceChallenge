@@ -6,6 +6,7 @@ abstract class Rocket : SpaceShip {
     abstract val cost: Int
     abstract val cargoLimit: Int
     var cargoCarried: Int = 0
+        protected set
 
     override fun launch(): Boolean = true
     override fun land(): Boolean = true
