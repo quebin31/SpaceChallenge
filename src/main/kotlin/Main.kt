@@ -7,8 +7,8 @@ fun main(args: Array<String>) {
         return
     }
 
-    for (phase in args) {
-        println("Simulation for phase: $phase")
+    for ((index, phase) in args.withIndex()) {
+        println("Simulation for phase ${index + 1}")
         val items = Simulation.loadItems(phase)
 
         val u1Rockets = Simulation.loadU1(items)
